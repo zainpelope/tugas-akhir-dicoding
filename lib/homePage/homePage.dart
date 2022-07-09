@@ -42,10 +42,11 @@ class _HomePageState extends State<HomePage> {
                     height: 8,
                   ),
                   const Center(
-                      child: Text(
-                    "We've helped millions across the nation find their\n perpect match... and you're next!",
-                    style: TextStyle(fontSize: 14.0),
-                  )),
+                    child: Text(
+                      "We've helped millions across the nation find their\n perpect match... and you're next!",
+                      style: TextStyle(fontSize: 14.0),
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(

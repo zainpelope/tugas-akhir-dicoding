@@ -1,34 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:proyek_akhir_dicoding/bottom/profile.dart';
+import 'package:proyek_akhir_dicoding/bottom/settings.dart';
+import 'package:proyek_akhir_dicoding/bottom/trips.dart';
 
-class Bottom extends StatefulWidget {
-  const Bottom({Key? key}) : super(key: key);
+class BelajarNavBar extends StatefulWidget {
+  const BelajarNavBar({Key? key}) : super(key: key);
 
   @override
-  State<Bottom> createState() => _BottomState();
+  _BelajarNavBarState createState() => _BelajarNavBarState();
 }
-
-class _BottomState extends State<Bottom> {
-  int _selectedTabIndex = 0;
-
-  void _onNavBarTapped(int index) {
+class _BelajarNavBarState extends State<BelajarNavBar> {
+  int _selectedNavbar = 0;
+  void _changeSelectedNavBar(int index) {
     setState(() {
-      _selectedTabIndex = index;
+      _selectedNavbar = index;
     });
   }
-
+  List halaman = [const Trips(),const Profile(),const Settings()];
   @override
   Widget build(BuildContext context) {
-    final _listPage = <Widget>[
-      const Text('Halaman Home'),
-      const Text('Halaman Favorite'),
-      const Text('Halaman Profile'),
-    ];
-
-    final bottomNavBarItems = <BottomNavigationBarItem>[
-      const BottomNavigationBarItem(icon: Icon(Icons.home),
-        backgroundColor: Colors.red
-      )
-    ];
-    return Container();
+    return Scaffold(
+      body: halaman[_selectedNavbar],
+      bottomNavigationBar: BottomNavigationBar(
+        items:  const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.room),
+            label: ('Trips'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: ('Profile'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: ('Settings'),
+          ),
+        ],
+        currentIndex: _selectedNavbar,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.grey,
+        showUnselectedLabels: true,
+        onTap: _changeSelectedNavBar,
+      ),
+    );
   }
 }

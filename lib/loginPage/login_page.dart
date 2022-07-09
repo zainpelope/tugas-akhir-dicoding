@@ -1,7 +1,5 @@
-
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:proyek_akhir_dicoding/bottom/bottom_navi.dart';
 import 'package:proyek_akhir_dicoding/loginPage/theme.dart';
 
 import '../homePage/homePage.dart';
@@ -100,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const LoginPage()));
+                          builder: (context) => const BelajarNavBar()));
                 },
                 child: const Center(
                   child: Text(

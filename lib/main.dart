@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyek_akhir_dicoding/bottom/bottom_navi.dart';
+import 'package:proyek_akhir_dicoding/bottom/trips.dart';
 import 'package:proyek_akhir_dicoding/homePage/homePage.dart';
 
 import 'loginPage/login_page.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Lato',
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const BelajarNavBar(),
     );
   }
 }
